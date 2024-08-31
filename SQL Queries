@@ -1,0 +1,28 @@
+--SQL codes:
+
+--gives everything from the dataset
+select * from Book1
+
+
+-- gives number of major 
+select distinct Major from Book1
+
+
+-- gives number of students in each Honor category
+select honor, count(*) as NumberofStudents from Book1
+group by Honor
+
+-- gives number of students in each Level category
+SELECT level, count(*) as NumberofStudents from Book1
+GROUP by level
+
+
+-- gives list of major with number of student in each major
+select major, count(*) as NumberofStudents from Book1
+group by Major
+order by count(*) desc
+
+-- breakdown of number of students bt major,honor, Level
+select major, honor, level, count(*) as NumberofStudents from Book1
+group by Major, Honor, level
+order by count(*) desc
